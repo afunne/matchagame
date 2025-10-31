@@ -45,7 +45,7 @@ namespace matchagame
 
             Label title = new Label
             {
-                Text = "🧩 Match Game",
+                Text = "🧩 Mängu sobitamine",
                 Font = new Font("Segoe UI", 36, FontStyle.Bold),
                 ForeColor = Color.White,
                 Dock = DockStyle.Top,
@@ -54,9 +54,9 @@ namespace matchagame
             };
 
             // Create buttons
-            Button easyBtn = CreateMenuButton("Easy", Difficulty.Easy);
-            Button normalBtn = CreateMenuButton("Normal", Difficulty.Normal);
-            Button hardBtn = CreateMenuButton("Hard", Difficulty.Hard);
+            Button easyBtn = CreateMenuButton("Lihtne", Difficulty.Easy);
+            Button normalBtn = CreateMenuButton("Normaalne", Difficulty.Normal);
+            Button hardBtn = CreateMenuButton("Raske", Difficulty.Hard);
 
             FlowLayoutPanel buttonRow = new FlowLayoutPanel
             {
@@ -167,7 +167,7 @@ namespace matchagame
                 Padding = new Padding(10, 5, 10, 5),
                 TextAlign = ContentAlignment.MiddleLeft,
                 Font = new Font("Segoe UI", 12, FontStyle.Bold),
-                Text = "Time: 0s",
+                Text = "Aeg: 0s",
                 BackColor = Color.SteelBlue,
                 ForeColor = Color.White,
                 Dock = DockStyle.Top
@@ -256,7 +256,7 @@ namespace matchagame
         private void StopwatchTimer_Tick(object sender, EventArgs e)
         {
             elapsedSeconds++;
-            timerLabel.Text = $"Time: {elapsedSeconds}s";
+            timerLabel.Text = $"Aeg: {elapsedSeconds}s";
         }
 
         private void CheckForWinner()
@@ -270,8 +270,8 @@ namespace matchagame
             gameRunning = false;
 
             MessageBox.Show(
-            $"You matched all icons in {elapsedSeconds} seconds!",
-            "Congratulations!!!!",
+            $"Sa leidsid kõik ikoonid üles {elapsedSeconds} sekundiga!",
+            "Õnnitlused!!!!",
             MessageBoxButtons.OK,
             MessageBoxIcon.Information);    
             // Go back to menu
